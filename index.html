@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Khula:800,700'>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.clear {
+				clear: both !important;
+			}
+			.pb-container {
+				padding-top: 50px;
+				width: 100%;
+				max-width: 1000px !important;
+				margin: 0 auto !important;
+				clear: both !important;
+				/*font-size: 249px;*/
+				text-align: center;
+				color: #FFF2E8;
+	/*			background-color:#FEF8EA;
+	*/			z-index: 0;
+			}
+			.leaderboard {
+				position: relative;
+				width: 100%;
+				max-width: 1000px !important;
+				max-height: 130px;
+				margin: 0 auto !important;
+				clear: both !important;
+				/*background-color:#93BDBB;*/
+				border-bottom: 1px solid #d5d5d5;
+				z-index: 1;
+			}
+			.adHideable {
+				position: relative;
+				max-height: 130px;
+				height: auto;
+				padding: 20px 5px !important;
+				background: none !important;
+			}
+			.leaderboardSlug {
+				display: inline-block;
+				height: 90px;
+				width: 728px;
+				/*text-align: left;*/
+				background-color: #C8C3B6;
+				z-index: 2;
+			
+			}
+			.feature {
+				padding: 10px 10px 10px 10px;
+				
+			}
+			.articleTop {
+				width: 1000px;
+				max-width: 100%;
+				height: 182px;
+				text-align: left;
+	/*			background-color: #CCC5B1;
+	*/		}
+			.headlineKicker {
+				font-family:'Khula';
+				font-size: 1.2em;
+				color: #CCC5B1;
+				margin: 10px 0 7px 0;
+			}
+			.articleTop h1 {
+				font-family:'Khula';
+				font-weight: 700;
+				font-size: 48px;
+				line-height: 52px;
+				color: #CCC5B1;
+				margin-top: 0;
+				margin-bottom: 0.45em;
+			}
+			.articleSocial {
+				position: relative;
+				height: 80px;
+				max-width: 100%;
+				margin-top: -20px !important;
+	/*			background-color: #DDC2AC;
+	*/			border-bottom: 1px solid #d5d5d5
+			}
+			.socialTools {
+				display: inline-block;
+				float: left;
+			}
+			.lonelyTools {
+				display: inline-block;
+				float: right;
+			}
+			.socialIcon {
+				display: inline-block;
+				height: 38px;
+				width: 60px;
+				clear: both;
+				border-radius: 3px;
+				margin-top: 10px;
+				margin-right: 3px;
+				margin-bottom: 3px;
+				background-color: #CCC5B1;
+			}
+			.btn-group {
+				float: right;
+				margin-top: 10px;
+				margin-bottom: 3px;
+			}
+			.btn {
+				/*padding-top: 9px;
+				padding-bottom: 9px;*/
+				padding: 9px 14.5px 9px 14.5px;
+			}
+
+			@media only screen and (max-width:768px) {
+				.leaderboard {
+					display: none;
+				}
+				.pb-2 {
+					width:100% !important;
+				}
+				.articleMain {
+					padding: 10px 10px 10px 10px !important;
+					border-right: none !important;
+				}
+				.pb-3,.sideAd {
+					display: none;
+				}
+			}
+
+			/*Main article body*/
+			.pb-2 {
+				position: relative;
+				display: inline-block;
+				float: left;
+				width: 66%;
+				margin: 0px !important;
+		
+			}
+			.articleMain {
+				width:100%;
+
+				padding: 10px 50px 10px 10px;
+	/*			padding-right: 50px !important;
+	*//*			background-color:green;
+	*/			border-right: 1px solid #d5d5d5;
+			}
+			.articleBody {
+				margin-top: 20px;
+			}
+			.imgPlaceholder {
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+				border-bottom: 1px solid #D5D5D5;
+			}
+			.imgPlaceholder > img {
+				display: block;
+				width: 100%;
+			}
+			.caption {
+				text-align: left;
+				margin-top:5px;
+				font-family: Helvetica;
+				font-size: 14px;
+				line-height: 20px;
+				color: #6e6e6e;
+			}
+			.bylineStamp {
+				width:77%;
+				height:20px;
+				margin-bottom: 20px;
+				background-color: #C8C3B6;
+			}
+			.para {
+				background-color: #C8C3B6;
+				margin-bottom: 40px;
+			}
+
+			.pb-3 {
+				position: relative;
+				display: inline-block;
+				width: 33%;
+				float: left;
+			}
+			.adHolder {
+				padding: 12px 10px 10px 20px;
+			}
+			.sideAdCanoe{
+				min-width: 300px;
+				min-height: 600px;
+				background-color: #C8C3B6;
+			}
+			.sideAdStocky {
+				min-width: 300px;
+				min-height: 250px;
+			}
+			.sideAdUltraCanoe {
+				width: 160px;
+				height: 600px;
+			}
+			.mostBoard {
+				padding: 10px 10px 10px 20px;
+			}
+			.adModBorder {
+				width: 30px;
+				height: 1px;
+				margin-top: 20px;
+				border-top: 3px solid #2a2a2a;
+			}
+			.modHead {
+				width: 300px;
+				height: 40px;
+				margin: -5px 0px 12px 0px;
+				text-align: left;
+				line-height: 40px;
+				color: black;
+				font-family: 'Khula';
+			}
+			.modFeed {
+				padding: 20px 20px 14px 20px;
+				margin-bottom: 30px;
+				border: 1px solid #d5d5d5;
+				border-radius: 4px;
+			}
+			.modFeed li {
+				border-bottom: 1px solid #D2D2D2;
+			}
+			.last {
+				border-bottom: 0px !important;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="backfield" style="background-color:#FFF5EC;min-height:2400px;">
+				<div class="articleWithKM">
+					<div class="navbar navbar-default navbar-fixed-top" style="height:50px;">
+						<div class="container">
+					    ...
+						</div>
+					</div>
+					<div class="pb-container">
+						<div class="leaderboard">
+							<div class="adHideable">
+								<div class="leaderboardSlug">
+									<img src="img/kayak.svg" />
+								</div>
+							</div>
+						</div>
+						<div class="articleTop feature">
+							<div class="headlineKicker">Politics</div>
+							<h1>Obama's proposal for more trade with Asia may not go over so well in his own party</h1>
+							
+						</div>
+						<div class="clear"></div>
+						<div class="articleSocial feature clear">
+							<div class="socialTools">
+								<div class="socialIcon"></div>
+								<div class="socialIcon"></div>
+								<div class="socialIcon"></div>
+								<div class="socialIcon"></div>
+								<div class="socialIcon"></div>
+							</div>
+							<div class="lonelyTools" data-100="">
+								<div class="btn-group" role="group" aria-label="...">
+									<button type="button" class="btn btn-default"><span class="fa fa-font fa-lg"></span></button>
+									<button type="button" class="btn btn-default"><span class="fa fa-print fa-lg"></span></button>
+									<button type="button" class="btn btn-default"><span class="fa fa-comments fa-lg"></span></button>
+								</div>
+							</div>
+						</div>
+						<div class="pb-2">
+							<div class="articleMain">
+								<div class="articleBody">
+									<div class="imgPlaceholder">
+										<img src="untitled-2.svg" />
+										<div class="caption">President Obama discusses the opportunities and benefits of trade on March 25 in the Roosevelt Room of the White House. (Susan Walsh/AP)</div>
+									</div>
+									<div class="bylineStamp"></div>
+									<div class="article">
+										<div class="para"></div>
+										<div class="para"></div>
+										<div class="para"></div>
+										<div class="para"></div>
+										<div class="para"></div>
+										<div class="para"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pb-3">
+							<div class="adHolder">
+								<span>AD</span>
+								<div class="sideAdCanoe">
+									<img src="img/canoe.svg" />
+								</div>
+								<div class="sideAdStocky">
+									<img src="img/stocky.svg" />
+								</div>
+								<div class="sideAdUltraCanoe">
+									<img src="img/ultra-canoe.svg" />
+								</div>
+							</div>
+							<div class="mostBoard">
+								<div class="adModBorder"></div>
+								<div class="modHead">
+									Most Read Local
+								</div>
+								<ul class="modFeed">
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li class="last"></li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<script>
+
+			var randomize = function() {
+				return Math.random();
+			}
+			// console.log(randomize());
+			if (randomize() >= 0.66) {
+				$('.sideAdCanoe').hide();
+				$('.sideAdUltraCanoe').hide();
+			} else if (randomize() <= 0.33) {
+				$('.sideAdCanoe').hide();
+				$('.sideAdStocky').hide();
+			} else {
+				$('.sideAdUltraCanoe').hide();
+				$('.sideAdStocky').hide();
+			}
+
+		</script>
+		<script src="skrollr.min.js"></script>
+		<script>
+			var s = skrollr.init();
+	    </script>
+	</body>
+</html>
